@@ -1,6 +1,56 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>romsanbryan</groupId>
-  <artifactId>lib</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>romsanbryan</groupId>
+	<artifactId>lib</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<properties>
+		<!-- General -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<compiler.version>1.8</compiler.version>
+		<maven.build.timestamp.format>dd/MM/yyyy HH:mm</maven.build.timestamp.format>
+
+		<!-- Maven plugins -->
+		<maven.compiler.plugin.version>3.1</maven.compiler.plugin.version>
+		<maven.release.plugin.version>2.5</maven.release.plugin.version>
+		<maven.ear.plugin.version>2.9.1</maven.ear.plugin.version>
+		<maven.jar.plugin.version>2.3.2</maven.jar.plugin.version>
+		<maven.war.plugin.version>3.2.3</maven.war.plugin.version>
+		<maven.resources.plugin.version>2.7</maven.resources.plugin.version>
+		<maven.clean.plugin.version>3.1.0</maven.clean.plugin.version>
+		<maven.replacer.plugin.version>1.5.2</maven.replacer.plugin.version>
+	</properties>
+
+	<build>
+		<plugins>
+			<!-- | MAVEN COMPILER PLUGIN PARA QUE SE COMPILE CON LA JDK DE WAS 6.1 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven.compiler.plugin.version}</version>
+				<configuration>
+					<source>${compiler.version}</source>
+					<target>${compiler.version}</target>
+					<verbose>true</verbose>
+					<fork>true</fork>
+					<compilerVersion>${compiler.version}</compilerVersion>
+				</configuration>
+			</plugin>
+
+
+			<!-- MAVEN RELEASE PLUGIN -->
+			<plugin>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>${maven.release.plugin.version}</version>
+				<configuration>
+					<preparationGoals>clean release:clean install</preparationGoals>
+					<tagBase>${svn.tags}</tagBase>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+
 </project>
