@@ -1,4 +1,4 @@
-package lib.romsanbryan.utils;
+package lib.romsanbryan.utils.converts;
 
 public class StringUtils {
 

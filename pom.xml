@@ -6,6 +6,16 @@
 	<artifactId>lib</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
+<dependencies>
+<dependency>
+    <groupId>org.javassist</groupId>
+    <artifactId>javassist</artifactId>
+    <version>3.28.0-GA</version>
+</dependency>
+
+
+</dependencies>
+
 	<properties>
 		<!-- General -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
